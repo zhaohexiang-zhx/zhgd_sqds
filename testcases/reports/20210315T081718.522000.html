@@ -1,0 +1,926 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2021-03-15T08:17:18.522000</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.227 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.5.7 </td>
+      <td>CPython 3.5.4 </td>
+      <td colspan="2">Windows-7-6.1.7601-SP1</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (1/0)</td>
+      <td colspan="2">2 (2/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>testcase description</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 2</td>
+      <td>SUCCESS: 2</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录</td>
+      <td style="text-align:center;width:6em;">99.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://10.23.190.107:8080/zhgd_mms//user/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>sign=3b27c2c0220cd6e113724bc2157e2c38&amp;pageSize=null&amp;loginName=13333333333&amp;terminal=wechat&amp;offset=null&amp;v=&amp;password=72732414d750775c1eb0b5b915b3561b&amp;timestamp=1615796238519&amp;token=</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;content-type&#34;: &#34;application/x-www-form-urlencoded;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;177&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Linux; Android 10; PCLM10 Build/QKQ1.191021.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62 XWEB/2759 MMWEBSDK/201201 Mobile Safari/537.36 MMWEBID/164 MicroMessenger/8.0.1.1841(0x2800015D) Process/appbrand0 WeChat/arm64 Weixin NetType/4G Language/zh_CN ABI/arm64 MiniProgramEnv/android&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;charset&#34;: &#34;utf-8&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Access-Control-Allow-Methods&#34;: &#34;POST, GET, OPTIONS, DELETE, HEAD&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Access-Control-Max-Age&#34;: &#34;3600&#34;,
+  &#34;Keep-Alive&#34;: &#34;timeout=20&#34;,
+  &#34;Date&#34;: &#34;Mon, 15 Mar 2021 08:17:18 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;access-control-allow-origin, authority, content-type, version-info, X-Requested-With&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://10.23.190.107:8080/zhgd_mms//user/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;results&#34;: {
+    &#34;code&#34;: 200,
+    &#34;ret&#34;: 200,
+    &#34;msg&#34;: &#34;成功&#34;,
+    &#34;data&#34;: {
+      &#34;user&#34;: {
+        &#34;sex&#34;: 0,
+        &#34;parentAppInformationKey&#34;: &#34;platform&#34;,
+        &#34;remarks&#34;: &#34;旺角小渔村&#34;,
+        &#34;permissionKeyList&#34;: null,
+        &#34;areaName&#34;: null,
+        &#34;roleName&#34;: &#34;商户子账号&#34;,
+        &#34;headerUrl&#34;: null,
+        &#34;userKey&#34;: &#34;41c5c971c18e42f1a5c397f9f192c5ca&#34;,
+        &#34;status&#34;: 1,
+        &#34;mobile&#34;: &#34;13333333333&#34;,
+        &#34;platformTypeParam&#34;: null,
+        &#34;appStatus&#34;: 1,
+        &#34;platformType&#34;: 4,
+        &#34;roleKey&#34;: &#34;shanghuzizhanghao&#34;,
+        &#34;operators&#34;: 14,
+        &#34;appInformationKey&#34;: &#34;cef0642aeb1e4f22baf7336ed562f717&#34;,
+        &#34;password&#34;: &#34;72732414d750775c1eb0b5b915b3561b&#34;,
+        &#34;shortName&#34;: &#34;烟台市莱山区-电商&#34;,
+        &#34;sexName&#34;: null,
+        &#34;permissionUrlList&#34;: null,
+        &#34;roleStatus&#34;: &#34;1&#34;,
+        &#34;createTime&#34;: &#34;2021-03-03 14:11:52&#34;,
+        &#34;loginName&#34;: &#34;13333333333&#34;,
+        &#34;userName&#34;: &#34;13333333333&#34;,
+        &#34;plaftformTypeName&#34;: null,
+        &#34;shopName&#34;: null,
+        &#34;accountCount&#34;: 10,
+        &#34;functionName&#34;: null,
+        &#34;template&#34;: null,
+        &#34;statusName&#34;: &#34;启用&#34;,
+        &#34;creator&#34;: &#34;21a51923089a4ff0b29d2580e1fde923&#34;,
+        &#34;shopKey&#34;: &#34;8faa4ca7cd1e4a7496d08cfa8d28de84&#34;,
+        &#34;areaCode&#34;: null,
+        &#34;eBizFlag&#34;: 1,
+        &#34;updateTime&#34;: 1614752612000,
+        &#34;id&#34;: 472,
+        &#34;customerType&#34;: 1
+      },
+      &#34;permissions&#34;: [
+        {
+          &#34;hasParent&#34;: true,
+          &#34;showBtns&#34;: &#34;&#34;,
+          &#34;value&#34;: &#34;7001&#34;,
+          &#34;path&#34;: &#34;&#34;,
+          &#34;text&#34;: &#34;&#34;,
+          &#34;disabled&#34;: false,
+          &#34;level&#34;: 0,
+          &#34;key&#34;: &#34;7001&#34;,
+          &#34;parentId&#34;: &#34;0&#34;,
+          &#34;appType&#34;: 2,
+          &#34;children&#34;: [
+            {
+              &#34;hasParent&#34;: true,
+              &#34;showBtns&#34;: &#34;add,edit,view,del,audit,offline,editStock&#34;,
+              &#34;value&#34;: &#34;700101&#34;,
+              &#34;path&#34;: &#34;/e-biz/goods/index&#34;,
+              &#34;disabled&#34;: false,
+              &#34;level&#34;: 1,
+              &#34;key&#34;: &#34;700101&#34;,
+              &#34;parentId&#34;: &#34;7001&#34;,
+              &#34;appType&#34;: 2,
+              &#34;leaf&#34;: false,
+              &#34;order&#34;: 700101,
+              &#34;id&#34;: &#34;700101&#34;,
+              &#34;label&#34;: &#34;商品管理&#34;,
+              &#34;hasChildren&#34;: true
+            },
+            {
+              &#34;hasParent&#34;: true,
+              &#34;showBtns&#34;: &#34;add,edit,enable,disable,del&#34;,
+              &#34;value&#34;: &#34;700102&#34;,
+              &#34;path&#34;: &#34;/e-biz/goods/classifyIndex&#34;,
+              &#34;disabled&#34;: false,
+              &#34;level&#34;: 1,
+              &#34;key&#34;: &#34;700102&#34;,
+              &#34;parentId&#34;: &#34;7001&#34;,
+              &#34;appType&#34;: 2,
+              &#34;leaf&#34;: false,
+              &#34;order&#34;: 700102,
+              &#34;id&#34;: &#34;700102&#34;,
+              &#34;label&#34;: &#34;分类管理&#34;,
+              &#34;hasChildren&#34;: true
+            }
+          ],
+          &#34;leaf&#34;: false,
+          &#34;order&#34;: 7001,
+          &#34;id&#34;: &#34;7001&#34;,
+          &#34;label&#34;: &#34;商品管理&#34;,
+          &#34;hasChildren&#34;: true
+        },
+        {
+          &#34;hasParent&#34;: true,
+          &#34;showBtns&#34;: &#34;&#34;,
+          &#34;value&#34;: &#34;7002&#34;,
+          &#34;disabled&#34;: false,
+          &#34;label&#34;: &#34;交易管理&#34;,
+          &#34;key&#34;: &#34;7002&#34;,
+          &#34;parentId&#34;: &#34;0&#34;,
+          &#34;appType&#34;: 2,
+          &#34;children&#34;: [
+            {
+              &#34;hasParent&#34;: true,
+              &#34;showBtns&#34;: &#34;view&#34;,
+              &#34;value&#34;: &#34;700201&#34;,
+              &#34;path&#34;: &#34;/e-biz/trademanage/index&#34;,
+              &#34;text&#34;: &#34;&#34;,
+              &#34;disabled&#34;: false,
+              &#34;level&#34;: 1,
+              &#34;key&#34;: &#34;700201&#34;,
+              &#34;parentId&#34;: &#34;7002&#34;,
+              &#34;appType&#34;: 2,
+              &#34;leaf&#34;: false,
+              &#34;order&#34;: 700201,
+              &#34;id&#34;: &#34;700201&#34;,
+              &#34;label&#34;: &#34;订单管理&#34;,
+              &#34;hasChildren&#34;: true
+            }
+          ],
+          &#34;leaf&#34;: false,
+          &#34;order&#34;: 7002,
+          &#34;id&#34;: &#34;7002&#34;,
+          &#34;level&#34;: 0,
+          &#34;hasChildren&#34;: true
+        },
+        {
+          &#34;hasParent&#34;: true,
+          &#34;showBtns&#34;: &#34;&#34;,
+          &#34;value&#34;: &#34;7005&#34;,
+          &#34;disabled&#34;: false,
+          &#34;label&#34;: &#34;系统管理&#34;,
+          &#34;key&#34;: &#34;7005&#34;,
+          &#34;parentId&#34;: &#34;0&#34;,
+          &#34;appType&#34;: 2,
+          &#34;children&#34;: [
+            {
+              &#34;hasParent&#34;: true,
+              &#34;showBtns&#34;: &#34;view,add,enable,edit,delete,disable,manageAccount&#34;,
+              &#34;value&#34;: &#34;700502&#34;,
+              &#34;path&#34;: &#34;/e-biz/shop/index&#34;,
+              &#34;disabled&#34;: false,
+              &#34;level&#34;: 1,
+              &#34;key&#34;: &#34;700502&#34;,
+              &#34;parentId&#34;: &#34;7005&#34;,
+              &#34;appType&#34;: 2,
+              &#34;leaf&#34;: false,
+              &#34;order&#34;: 700502,
+              &#34;id&#34;: &#34;700502&#34;,
+              &#34;label&#34;: &#34;商家管理&#34;,
+              &#34;hasChildren&#34;: true
+            }
+          ],
+          &#34;leaf&#34;: false,
+          &#34;order&#34;: 7005,
+          &#34;id&#34;: &#34;7005&#34;,
+          &#34;level&#34;: 0,
+          &#34;hasChildren&#34;: true
+        },
+        {
+          &#34;hasParent&#34;: false,
+          &#34;showBtns&#34;: &#34;&#34;,
+          &#34;value&#34;: &#34;7&#34;,
+          &#34;path&#34;: &#34;/e-biz/index&#34;,
+          &#34;text&#34;: &#34;/e-biz/index&#34;,
+          &#34;disabled&#34;: false,
+          &#34;level&#34;: 0,
+          &#34;key&#34;: &#34;7&#34;,
+          &#34;parentId&#34;: &#34;0&#34;,
+          &#34;appType&#34;: 1,
+          &#34;leaf&#34;: false,
+          &#34;order&#34;: 7,
+          &#34;id&#34;: &#34;7&#34;,
+          &#34;label&#34;: &#34;社区电商后台&#34;,
+          &#34;hasChildren&#34;: false
+        }
+      ],
+      &#34;token&#34;: &#34;d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed34e7bc3557966f4c6bcc4540b9e35794b2c8ee08b738c8aff188238f5cdba5f3fae06a690024e38fce7f6e9d0c64899f757cc50826c1bb23c4cf0be2c32c1899fafd038b62fdb334fdb7a2743b85248010f0bf75a49b6adf3783612ddfd487dd91&#34;
+    }
+  }
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            None
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        headers.Content-Type
+                      </td>
+                      <td>equals</td>
+                      <td>application/json</td>
+                      <td>application/json</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>3265</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>99.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>64.548</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">新增分类</td>
+      <td style="text-align:center;width:6em;">119.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 新增分类</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://10.23.190.107:8080/zhgd_mms//goods_classify/save_goods_classify
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>sign=5b5a02e5b5677b2837ac8de7914fa7a2&amp;pageSize=null&amp;offset=null&amp;name=new_1615796238519&amp;terminal=wechat&amp;v=&amp;timestamp=1615794247000&amp;token=d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed34e7bc3557966f4c6bcc4540b9e35794b2c8ee08b738c8aff188238f5cdba5f3fae06a690024e38fce7f6e9d0c64899f757cc50826c1bb23c4cf0be2c32c1899fafd038b62fdb334fdb7a2743b85248010f0bf75a49b6adf3783612ddfd487dd91</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;content-type&#34;: &#34;application/x-www-form-urlencoded;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;424&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Linux; Android 10; PCLM10 Build/QKQ1.191021.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62 XWEB/2759 MMWEBSDK/201201 Mobile Safari/537.36 MMWEBID/164 MicroMessenger/8.0.1.1841(0x2800015D) Process/appbrand0 WeChat/arm64 Weixin NetType/4G Language/zh_CN ABI/arm64 MiniProgramEnv/android&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;charset&#34;: &#34;utf-8&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Access-Control-Allow-Methods&#34;: &#34;POST, GET, OPTIONS, DELETE, HEAD&#34;,
+  &#34;Set-Cookie&#34;: &#34;JSESSIONID=BD4171556AD6154FCBA2097655139436; Path=/zhgd_mms; HttpOnly, rememberMe=deleteMe; Path=/zhgd_mms; Max-Age=0; Expires=Sun, 14-Mar-2021 08:17:18 GMT&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Access-Control-Max-Age&#34;: &#34;3600&#34;,
+  &#34;Keep-Alive&#34;: &#34;timeout=20&#34;,
+  &#34;Date&#34;: &#34;Mon, 15 Mar 2021 08:17:18 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Transfer-Encoding&#34;: &#34;chunked&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;access-control-allow-origin, authority, content-type, version-info, X-Requested-With&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'JSESSIONID': 'BD4171556AD6154FCBA2097655139436'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://10.23.190.107:8080/zhgd_mms//goods_classify/save_goods_classify
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;code&#34;: 200,
+  &#34;results&#34;: {
+    &#34;code&#34;: 200,
+    &#34;ret&#34;: 200,
+    &#34;msg&#34;: &#34;保存成功&#34;,
+    &#34;data&#34;: {
+      &#34;createTimeStr&#34;: null,
+      &#34;orderNum&#34;: 85,
+      &#34;goodsNum&#34;: null,
+      &#34;name&#34;: &#34;new_1615796238519&#34;,
+      &#34;goodsClassifyKey&#34;: &#34;b20a9a1756044e80b028b33dfe71f772&#34;,
+      &#34;creator&#34;: &#34;41c5c971c18e42f1a5c397f9f192c5ca&#34;,
+      &#34;status&#34;: 2,
+      &#34;statusName&#34;: null,
+      &#34;appInformationKey&#34;: &#34;cef0642aeb1e4f22baf7336ed562f717&#34;,
+      &#34;shopKey&#34;: &#34;8faa4ca7cd1e4a7496d08cfa8d28de84&#34;,
+      &#34;newOrderNum&#34;: null,
+      &#34;createTime&#34;: 1615796238566,
+      &#34;id&#34;: null,
+      &#34;flag&#34;: null,
+      &#34;updateTime&#34;: 1615796238566
+    }
+  }
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            None
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        headers.Content-Type
+                      </td>
+                      <td>equals</td>
+                      <td>application/json</td>
+                      <td>application/json</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>476</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>119.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>116.503</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

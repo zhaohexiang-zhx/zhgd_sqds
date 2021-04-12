@@ -1,0 +1,97 @@
+config:
+    name: testcase description
+    variables:
+        timestamp: ${get_timestamp()}
+    verify: False
+teststeps:
+-   name: 登录获取token
+    testcase: testcases/login_manager.yml
+    extract:
+        - get_token
+
+-   name: 新增消息
+    request:
+        data:
+            _sign: a1342f7cfc7960da3ba03b30868973bb
+            _timestamp: ${timestamp}
+            content: <p>内容${timestamp}</p>
+            noticeTitle: 二级-三级${timestamp}
+            noticeType: '3'
+            receiveType: '3'
+            terminal: pc
+            token: ${get_token}
+            v: ''
+        headers:
+            Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+        method: POST
+        url: http://10.23.190.107:8080/zhgd_mms/notice/save_notice
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200
+
+
+
+-   name: 一级后台获取通知列表
+    request:
+        headers:
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+        method: GET
+        params:
+            _sign: 1871d4b58da3addd9cc5a1e58e40d729
+            _timestamp: ${timestamp}
+            functionName: e-biz
+            offset: '1'
+            pageSize: '10'
+            terminal: pc
+            token: ${get_token}
+            v: ''
+        url: http://10.23.190.107:8080/zhgd_mms/notice/get_ebiz_notice_list
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200
+    extract:
+        get_noticeKey: content.results.data.0.noticeKey
+
+-   name: 新增后启用
+    request:
+        data:
+            _sign: 5f4ceee3357c82eb11f87858ef6ef55e
+            _timestamp: ${timestamp}
+            noticeKey: ${get_noticeKey}
+            status: '1'
+            terminal: pc
+            token: ${get_token}
+            v: ''
+        headers:
+            Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+        method: POST
+        url: http://10.23.190.107:8080/zhgd_mms/notice/update_status
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200

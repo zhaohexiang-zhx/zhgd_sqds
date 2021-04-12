@@ -1,0 +1,40 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /zhgd_mms/shop/save_shop
+    request:
+        data:
+            _sign: 656374d73b61f1a5dd996186eed5cce9
+            _timestamp: '1618195175000'
+            appInformationKey: 55b9983fa14042db8a3dedb989024a33
+            areaCode: ''
+            cityCode: ''
+            deliveryRange: ''
+            idCardPictures: /images/shop/2021/04/716a20d2bdb4485e90058dcb6ea528da.jpg,/images/shop/2021/04/66dc28d34c9849e7ab6a2c0c284af920.jpg
+            licensePictures: /images/shop/2021/04/1e12469043ad460bbabdc8354750db34.jpg,/images/shop/2021/04/2dd3c0589a46424eacb81a9d662282b9.jpg
+            logo: /images/shop/2021/04/9fb90fba7ba64988b5162489ef4ad957.jpg
+            name: 新增商家
+            phone: '17812341234'
+            shopRatio: '10'
+            terminal: pc
+            token: d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed348dcf7d7ecdeb58d3388a73e45b0c19ab277a3a74a459ab5d8ae21354f1df6f106b0fb66fa803a16e17a0f3e25d0affaee3eab5c33699485de7d6d2aafd50d4e551239ce649d858f18209a65e135a9d1f3c6d8cc802f91ff22798cbbdd712c4dd
+            townCode: ''
+            v: ''
+            wechatAccount: '987654321'
+        headers:
+            Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+        method: POST
+        url: http://10.23.190.107:8080/zhgd_mms/shop/save_shop
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200

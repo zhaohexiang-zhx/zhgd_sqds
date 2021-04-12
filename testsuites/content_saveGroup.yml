@@ -1,0 +1,10 @@
+config:
+  name: "内容-分组名称"
+  variables: {}
+
+testcases:
+-
+    name: 新建内容-分组
+    testcase: testcases/content_saveGroup.yml
+    parameters:
+      GroupName: ${P(data/groupClassifyName.csv)}

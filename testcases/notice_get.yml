@@ -1,0 +1,30 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /zhgd_mms/notice/get_ebiz_notice_list
+    request:
+        headers:
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+        method: GET
+        params:
+            _sign: 1871d4b58da3addd9cc5a1e58e40d729
+            _timestamp: '1616752712000'
+            functionName: e-biz
+            offset: '1'
+            pageSize: '10'
+            terminal: pc
+            token: d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed348dcf7d7ecdeb58d3388a73e45b0c19ab277a3a74a459ab5d8ae21354f1df6f1088de6eac719df698f764dc272d9785f670013541a6ad06aeabd7908bf654f75d895301510fb9500b839710001ef646e7dc930da7e073ff5b2a6fb5094593b902
+            v: ''
+        url: http://10.23.190.107:8080/zhgd_mms/notice/get_ebiz_notice_list
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200

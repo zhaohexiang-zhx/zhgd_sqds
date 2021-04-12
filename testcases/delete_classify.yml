@@ -1,0 +1,36 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /zhgd_mms//goods_classify/delete
+    times:
+    request:
+        headers:
+            User-Agent: Mozilla/5.0 (Linux; Android 10; PCLM10 Build/QKQ1.191021.002;
+                wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62
+                XWEB/2759 MMWEBSDK/201201 Mobile Safari/537.36 MMWEBID/164 MicroMessenger/8.0.1.1841(0x2800015D)
+                Process/appbrand0 WeChat/arm64 Weixin NetType/4G Language/zh_CN ABI/arm64
+                MiniProgramEnv/android
+            charset: utf-8
+            content-type: application/x-www-form-urlencoded;charset=utf-8
+        method: GET
+        params:
+            goodsClassifyKey: cc27c17fe95c4b67ac7f65c8c148654d
+            offset: 'null'
+            pageSize: 'null'
+            sign: 41dd36115461a1aa095d1923922d4d85
+            terminal: wechat
+            timestamp: '1615800521000'
+            token: d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed34e7bc3557966f4c6bcc4540b9e35794b2c8ee08b738c8aff188238f5cdba5f3fae06a690024e38fce2062fc8007143ae6de6be1f385580bd9801df828b84288ad4d4b1227b27ee98593e06df6ae0af73aab45d7495b0363ee329d45fef28a567b
+            v: ''
+        url: http://10.23.190.107:8080/zhgd_mms//goods_classify/delete
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200

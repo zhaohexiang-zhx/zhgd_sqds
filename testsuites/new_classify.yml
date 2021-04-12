@@ -1,0 +1,10 @@
+config:
+  name: "分类名称"
+  variables: {}
+
+testcases:
+-
+    name: 新建商品分类
+    testcase: testcases/new_classify.yml
+    parameters:
+      classifyName: ${P(data/classifyName.csv)}
