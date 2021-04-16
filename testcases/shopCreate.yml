@@ -1,12 +1,18 @@
 config:
     name: testcase description
-    variables: {}
+    variables:
+        timestamp: ${get_timestamp()}
+    verify: False
 teststeps:
+-   name: 登录获取token
+    testcase: testcases/login_managers.yml
+    extract:
+        - get_token
 -   name: /zhgd_mms/shop/save_shop
     request:
         data:
             _sign: 656374d73b61f1a5dd996186eed5cce9
-            _timestamp: '1618195175000'
+            _timestamp: ${timestamp}
             appInformationKey: 55b9983fa14042db8a3dedb989024a33
             areaCode: ''
             cityCode: ''
@@ -18,7 +24,7 @@ teststeps:
             phone: '17812341234'
             shopRatio: '10'
             terminal: pc
-            token: d9bd5ef3a3ce488053d264ddc383f7d4a16e927a886b61468c536a8a7580f0e4d87c439ee5952a6d3fb736b0cc47ed348dcf7d7ecdeb58d3388a73e45b0c19ab277a3a74a459ab5d8ae21354f1df6f106b0fb66fa803a16e17a0f3e25d0affaee3eab5c33699485de7d6d2aafd50d4e551239ce649d858f18209a65e135a9d1f3c6d8cc802f91ff22798cbbdd712c4dd
+            token: ${get_token}
             townCode: ''
             v: ''
             wechatAccount: '987654321'
@@ -38,3 +44,5 @@ teststeps:
     -   eq:
         - content.code
         - 200
+    extract:
+        get_passwd: content.results.data.managerPassword

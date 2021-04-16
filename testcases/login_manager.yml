@@ -10,7 +10,7 @@ teststeps:
         data:
             _sign: 6a80921c8768ec1ae010742f423d3cb4
             _timestamp: '1616465399000'
-            loginName: ytslsq_admin
+            loginName: zhx_admin
             password: 72732414d750775c1eb0b5b915b3561b
             terminal: pc
             token: ''

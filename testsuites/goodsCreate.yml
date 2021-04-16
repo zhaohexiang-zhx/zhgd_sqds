@@ -1,0 +1,9 @@
+config:
+  name: 批量增加商品
+  variables: {}
+  verify: False
+
+testcases:
+-   name: 新建商品分类
+    times: 5
+    testcase: testcases/goodsSave.yml

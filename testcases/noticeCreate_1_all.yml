@@ -1,0 +1,142 @@
+config:
+    name: testcase description
+    variables:
+    timestamp: ${get_timestamp()}
+    verify: False
+teststeps:
+-   name: 登录后台一级获取token
+    testcase: testcases/login_manager.yml
+    extract:
+        - get_token
+-   name: 创建社区电商系统通知
+    request:
+        data:
+            _sign: ce48f9356668193d504e1898085de6c8
+            _timestamp: ${timestamp}
+            content:
+                '<p>内容：富文本</p>
+
+                <table style="border-collapse: collapse; width: 100%; border-color:
+                #236fa1; border-style: solid; height: 84px;" border="1">
+
+                <tbody>
+
+                <tr style="height: 21px;">
+
+                <td style="width: 16.1202%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">1</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                </tr>
+
+                <tr style="height: 21px;">
+
+                <td style="width: 16.1202%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">1</td>
+
+                </tr>
+
+                <tr style="height: 21px;">
+
+                <td style="width: 16.1202%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                </tr>
+
+                <tr style="height: 21px;">
+
+                <td style="width: 16.1202%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">11</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                <td style="width: 16.2568%; height: 21px; border-style: solid; border-color:
+                rgb(35, 111, 161);">&nbsp;</td>
+
+                </tr>
+
+                </tbody>
+
+                </table>
+
+                <p>&nbsp;</p>
+
+                <p><img style="max-width: 100%;" src="http://10.23.190.107//images/agreement/editor/2021/04/bfd8fabfb44e405a942bcc1e5658163a.png"></p>'
+            # 消息类型noticeType：1升级通知，2系统公告，3社区电商系统通知，4订单，5商品，6资金
+            # 接收对象receiveType：1所有，2二级平台，3三级平台，4用户
+            noticeTitle: 4.13-社区电商一级-二级
+            noticeType: '3'
+            receiveType: '2'
+            terminal: pc
+            token: ${get_token}
+            v: ''
+        headers:
+            Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36
+        method: POST
+        url: http://10.23.190.107:8080/zhgd_mms/notice/save_notice
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json
+    -   eq:
+        - content.code
+        - 200
